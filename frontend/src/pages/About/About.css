@@ -1,0 +1,24 @@
+.nosotros-page {
+  padding: 80px 32px 104px !important; 
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   NOSOTROS PAGE - RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  .nosotros-page { padding: 64px 24px 80px !important; }
+}
+
+@media (max-width: 600px) {
+
+  .nosotros-page { padding: 48px 20px 64px !important; }
+}
+
+@media (max-width: 400px) {
+
+  .nosotros-page { padding: 44px 16px 56px !important; }
+}

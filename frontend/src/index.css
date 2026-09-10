@@ -1,0 +1,267 @@
+/* ============================================================
+   index.css
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Instrument+Serif:ital@0;1&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ul { list-style: none; }
+
+address { font-style: normal; }
+
+
+/* ============================================================
+   UTILITY
+   ============================================================ */
+
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.w-full { width: 100%; }
+
+
+/* ============================================================
+   VARIABLES
+   ============================================================ */
+
+:root {
+  --bg: #fafaf8;
+  --bg2: #f3f2ef;
+  --bg3: #eceae5;
+  --border: #e2e0db;
+  --border2: #d0cec8;
+  --muted: #9a9690;
+  --muted2: #6e6b65;
+  --text: #3c3a36;
+  --dark: #1a1917;
+  --darker: #111110;
+  --sand: #c8b98a;
+  --sand2: #b5a574;
+  --sand-soft: rgba(200,185,138,.1);
+  --sand-mid: rgba(200,185,138,.2);
+  --green: #2d6a4f;
+  --green-soft: rgba(45,106,79,.1);
+  --red: #c0392b;
+  --nav-h: 70px;
+  --r: 8px;
+  --r-lg: 14px;
+  --r-xl: 22px;
+  --shadow-sm: 0 1px 3px rgba(26,25,23,.04), 0 4px 16px rgba(26,25,23,.05);
+  --shadow: 0 8px 32px rgba(26,25,23,.09), 0 2px 8px rgba(26,25,23,.05);
+  --shadow-lg: 0 20px 60px rgba(26,25,23,.14), 0 6px 20px rgba(26,25,23,.07);
+  --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --body: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Plus Jakarta Sans', 'Helvetica Neue', sans-serif;
+  --ease: cubic-bezier(.4,0,.2,1);
+  --ease-out: cubic-bezier(0,.6,.3,1);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+}
+
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: 100px;
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: -.1px;
+  cursor: pointer;
+  transition: all .3s var(--ease);
+  border: 1.5px solid transparent;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0);
+  transition: background .25s;
+  border-radius: inherit;
+}
+
+.btn-primary {
+  background: var(--dark);
+  color: #fff;
+  border-color: var(--dark);
+  box-shadow: 0 2px 12px rgba(26,25,23,.18), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.btn-primary:hover {
+  background: var(--darker);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 32px rgba(26,25,23,.28), inset 0 1px 0 rgba(255,255,255,.1);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--border2);
+  color: var(--text);
+}
+
+.btn-outline:hover {
+  border-color: var(--dark);
+  color: var(--dark);
+  background: var(--bg2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-outline-light {
+  background: transparent;
+  border-color: rgba(255,255,255,.25);
+  color: #fff;
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline-light:hover {
+  border-color: rgba(255,255,255,.65);
+  background: rgba(255,255,255,.08);
+  transform: translateY(-2px);
+}
+
+.btn-ghost-sm {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--muted2);
+  padding: 9px 18px;
+  font-size: 12.5px;
+  border-radius: 100px;
+}
+
+.btn-ghost-sm:hover {
+  border-color: var(--text);
+  color: var(--text);
+  background: var(--bg2);
+}
+
+
+/* ============================================================
+   SECTION HEADER PATTERN
+   ============================================================ */
+
+.sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 52px;
+}
+
+.sec-head.centered {
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--body);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--muted2);
+  margin-bottom: 12px;
+}
+
+.tag::before {
+  content: '';
+  width: 20px;
+  height: 1.5px;
+  background: var(--sand);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.tag-light { color: rgba(255,255,255,.45); }
+
+.tag-light::before { background: rgba(200,185,138,.5); }
+
+.sec-head h2 {
+  font-family: var(--font);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: -1.2px;
+  line-height: 1.08;
+}
+
+.sec-head.centered h2 { margin-top: 6px; }
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .wrap {
+    padding: 0 24px;
+  }
+
+  .sec-head {
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrap {
+    padding: 0 20px;
+  }
+
+  .btn {
+    padding: 12px 22px;
+  }
+
+  .sec-head {
+    margin-bottom: 30px;
+  }
+
+  .sec-head h2 {
+    font-size: 28px;
+  }
+
+  .tag {
+    font-size: 9.5px;
+    letter-spacing: 2px;
+  }
+}

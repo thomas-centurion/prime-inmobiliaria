@@ -1,0 +1,124 @@
+/* ============================================================
+   PROPERTY DETAIL PAGE
+   ============================================================ */
+
+.detalle-page {
+  padding: calc(var(--nav-h) + 36px) 32px 88px !important;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--body);
+  font-size: 13px;
+  color: var(--muted2);
+  margin-bottom: 36px;
+}
+
+.breadcrumb a:hover {
+  color: var(--dark);
+}
+
+.breadcrumb span {
+  color: var(--border2);
+}
+
+.breadcrumb button {
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.breadcrumb button:hover {
+  color: var(--dark);
+}
+
+.detalle-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 44px;
+  margin-bottom: 80px;
+}
+
+.detalle-media {
+  width: 100%;
+}
+
+
+/* ============================================================
+   IMAGEN DE LA PROPIEDAD
+   ============================================================ */
+
+.detalle-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow);
+}
+
+.detalle-img-ph {
+  aspect-ratio: 16/10;
+  background: var(--bg2);
+  border-radius: var(--r-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  border: 1px solid var(--border);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1000px) {
+  .detalle-grid {
+    grid-template-columns: 1fr 360px;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 800px) {
+  .detalle-page {
+    padding: calc(var(--nav-h) + 28px) 24px 64px !important;
+  }
+
+  .detalle-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 56px;
+  }
+
+  .breadcrumb {
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .detalle-page {
+    padding: calc(var(--nav-h) + 24px) 20px 56px !important;
+  }
+
+  .detalle-grid {
+    gap: 24px;
+  }
+
+  .detalle-img,
+  .detalle-img-ph {
+    border-radius: var(--r-lg);
+  }
+
+  .detalle-img-ph {
+    font-size: 60px;
+  }
+}

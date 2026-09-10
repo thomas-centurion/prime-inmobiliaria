@@ -1,0 +1,106 @@
+/* ============================================================
+    ABOUT INTRO
+   ============================================================ */
+
+.nos-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+  margin-bottom: 88px;
+}
+
+.nos-texto .tag {
+  display: inline-flex;
+}
+
+.nos-texto h2 {
+  font-family: var(--font);
+  font-size: clamp(30px, 3.8vw, 44px);
+  font-weight: 700;
+  color: var(--dark);
+  margin: 12px 0 18px;
+  letter-spacing: -1.5px;
+  line-height: 1.06;
+}
+
+.nos-texto p {
+  font-family: var(--body);
+  font-size: 15px;
+  color: var(--muted2);
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+
+.nos-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.nos-stat {
+  background: var(--dark);
+  border-radius: var(--r-xl);
+  padding: 30px 26px;
+  transition: transform .25s var(--ease);
+}
+
+.nos-stat:hover {
+  transform: translateY(-3px);
+}
+
+.nos-stat span {
+  display: block;
+  font-family: var(--font);
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.nos-stat label {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,.46);
+  letter-spacing: .5px;
+}
+
+/* ============================================================
+   ABOUT INTRO - RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  .nos-intro {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .nos-intro {
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  .nos-texto h2 { font-size: 32px; }
+
+  .nos-texto p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .nos-stats { gap: 12px;}
+
+  .nos-stat { padding: 24px 20px; }
+
+  .nos-stat span { font-size: 34px; }
+
+  .nos-stat label { font-size: 11px; }
+}

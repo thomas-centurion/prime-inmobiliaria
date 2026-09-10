@@ -1,0 +1,58 @@
+/* ============================================================
+   PAGE HEADER
+   ============================================================ */
+
+.page-header {
+  padding: calc(var(--nav-h) + 64px) 0 60px;
+  background: var(--dark);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, rgba(26,25,23,.05));
+  pointer-events: none;
+}
+
+.page-header h1 {
+  font-family: var(--font);
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -2px;
+  margin-bottom: 10px;
+  line-height: 1.01;
+}
+
+.page-header p {
+  font-family: var(--body);
+  font-size: 15px;
+  color: rgba(255,255,255,.46);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   PAGE HEADER - RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+  .page-header {
+    padding: calc(var(--nav-h) + 44px) 0 44px;
+  }
+
+  .page-header h1 {
+    font-size: 40px;
+    letter-spacing: -1.5px;
+  }
+
+  .page-header p {
+    font-size: 14px;
+  }
+
+}

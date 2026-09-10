@@ -1,0 +1,67 @@
+/* ============================================================
+   LOGIN PAGE
+   ============================================================ */
+
+.login-page {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--nav-h);
+  background: var(--bg2);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(200,185,138,.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(26,25,23,.04) 0%, transparent 50%);
+}
+
+.login-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 56px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: var(--shadow-lg);
+}
+
+.login-card h2 {
+  font-family: var(--font);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 32px;
+  letter-spacing: -.4px;
+}
+
+.login-back {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-back a {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.login-back a:hover {
+  color: var(--dark);
+}
+
+.login-brand {
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+/* ============================================================
+                    LOGIN PAGE - RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 600px) {
+  .login-page {
+    padding: calc(var(--nav-h) + 24px) 20px 24px;
+  }
+
+  .login-card {
+    padding: 36px 24px;
+  }
+}

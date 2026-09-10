@@ -1,0 +1,196 @@
+/* ============================================================
+   PROPERTY DETAIL INFO
+   ============================================================ */
+
+.detalle-badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.prop-badge {
+  top: 14px; left: 14px;
+  padding: 5px 13px;
+  border-radius: 100px;
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.prop-badge--venta    { background: var(--dark); color: #fff; }
+.prop-badge--alquiler { background: var(--sand); color: var(--darker); }
+
+.detalle-tipo {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.detalle-titulo {
+  font-family: var(--font);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.detalle-dir {
+  font-family: var(--body);
+  font-size: 14px;
+  color: var(--muted2);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.detalle-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.dspec {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 16px 18px;
+  transition: border-color .2s;
+}
+
+.dspec:hover {
+  border-color: var(--border2);
+}
+
+.dspec-label {
+  display: block;
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+.dspec-val {
+  font-family: var(--font);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: -.3px;
+}
+
+.detalle-desc {
+  margin-bottom: 32px;
+}
+
+.detalle-desc h3 {
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 10px;
+  letter-spacing: -.3px;
+}
+
+.detalle-desc p {
+  font-family: var(--body);
+  font-size: 14.5px;
+  color: var(--muted2);
+  line-height: 1.85;
+}
+
+/* ============================================================
+   PROPERTY DETAIL INFO - RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  .detalle-titulo {
+    font-size: 30px;
+  }
+
+  .detalle-specs-grid {
+    gap: 10px;
+  }
+
+  .dspec {
+    padding: 14px 15px;
+  }
+
+  .dspec-val {
+    font-size: 18px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .detalle-badges {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .prop-badge {
+    padding: 5px 11px;
+    font-size: 9px;
+  }
+
+  .detalle-tipo {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .detalle-titulo {
+    font-size: 26px;
+    letter-spacing: -.7px;
+  }
+
+  .detalle-dir {
+    font-size: 13px;
+    margin-bottom: 22px;
+  }
+
+  .detalle-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .dspec { padding: 13px 14px; }
+
+  .dspec-label { font-size: 9px; }
+
+  .dspec-val { font-size: 18px; }
+
+  .detalle-desc { margin-bottom: 26px; }
+
+  .detalle-desc h3 { font-size: 14px; }
+
+  .detalle-desc p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .detalle-titulo { font-size: 24px; }
+
+  .detalle-specs-grid { grid-template-columns: 1fr 1fr; }
+
+  .dspec { padding: 12px;}
+}

@@ -1,0 +1,29 @@
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 1s var(--ease-out),
+    transform 1s var(--ease-out);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ============================================================
+   SCROLL REVEAL - RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+  .reveal {
+    transform: translateY(14px);
+  }
+
+}

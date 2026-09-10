@@ -1,0 +1,36 @@
+/* ============================================================
+   RELATED PROPERTIES
+   ============================================================ */
+
+.relacionadas {
+  padding-top: 60px;
+  border-top: 1px solid var(--border);
+}
+
+.relacionadas h2 {
+  font-family: var(--font);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--dark);
+  letter-spacing: -1px;
+  margin-bottom: 32px;
+}
+
+/* ============================================================
+   RELATED PROPERTIES - RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+  .relacionadas { padding-top: 44px; }
+
+  .relacionadas h2 {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .relacionadas h2 { font-size: 21px; }
+}

@@ -1,0 +1,31 @@
+/* ============================================================
+                         CONTACT PAGE
+   ============================================================ */
+
+.contacto-page {
+  padding: 60px 32px 96px !important;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.ct-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 32px;
+}
+
+/* ============================================================
+                    CONTACT PAGE - RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .ct-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .contacto-page {
+    padding: 40px 20px 64px !important;
+  }
+}

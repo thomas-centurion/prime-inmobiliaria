@@ -1,0 +1,129 @@
+/* ============================================================
+   SECTION TIPOS
+   ============================================================ */
+
+.section-tipos {
+  padding: 88px 0;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.tipos-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-top: 44px;
+}
+
+.tipo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 32px 16px 28px;
+  transition: all .3s var(--ease-out);
+  cursor: pointer;
+  text-align: center;
+}
+
+.tipo-card:hover {
+  border-color: var(--dark);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  background: var(--bg);
+}
+
+.tipo-icon {
+  font-size: 28px;
+  transition: transform .3s var(--ease-spring);
+}
+
+.tipo-card:hover .tipo-icon { transform: scale(1.18) rotate(-4deg); }
+
+.tipo-card span {
+  font-family: var(--font);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -.1px;
+}
+
+/* ============================================================
+   PROPERTY TYPES - SCROLL REVEAL
+   ============================================================ */
+
+.tipos-grid .tipo-card:nth-child(1) {
+  transition-delay: 130ms;
+}
+
+.tipos-grid .tipo-card:nth-child(2) {
+  transition-delay: 50ms;
+}
+
+.tipos-grid .tipo-card:nth-child(3) {
+  transition-delay: 80ms;
+}
+
+.tipos-grid .tipo-card:nth-child(4) {
+  transition-delay: 130ms;
+}
+
+.tipos-grid .tipo-card:nth-child(5) {
+  transition-delay: 50ms;
+}
+
+.tipos-grid .tipo-card:nth-child(6) {
+  transition-delay: 80ms;
+}
+
+/* ============================================================
+   SECTION TIPOS - RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  .section-tipos { padding: 72px 0; }
+
+  .tipos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 36px;
+  }
+
+  .tipo-card { padding: 26px 14px 24px; }
+
+  .tipo-icon { font-size: 26px; }
+}
+
+@media (max-width: 600px) {
+
+  .section-tipos { padding: 60px 0; }
+
+  .tipos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .tipo-card {
+    padding: 24px 12px 22px;
+    gap: 10px;
+  }
+
+  .tipo-icon { font-size: 24px; }
+
+  .tipo-card span { font-size: 12px; }
+}
+
+@media (max-width: 400px) {
+
+  .tipos-grid { gap: 8px; }
+
+  .tipo-card { padding: 20px 10px; }
+
+  .tipo-icon { font-size: 22px; }
+}

@@ -1,0 +1,170 @@
+/* ============================================================
+   TEAM
+   ============================================================ */
+
+.nos-equipo {
+  margin-bottom: 88px;
+}
+
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 44px;
+}
+
+.asesor-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  transition:
+    transform .3s var(--ease-out),
+    box-shadow .3s;
+}
+
+.asesor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border2);
+}
+
+.asesor-img {
+  height: 260px;
+  background-size: cover;
+  background-position: center top;
+  transition: transform .5s var(--ease);
+}
+
+.asesor-card:hover .asesor-img {
+  transform: scale(1.02);
+}
+
+.asesor-info {
+  padding: 26px 28px;
+}
+
+.asesor-info h3 {
+  font-family: var(--font);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 4px;
+  letter-spacing: -.3px;
+}
+
+.asesor-info span {
+  display: block;
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.asesor-info p {
+  font-family: var(--body);
+  font-size: 13.5px;
+  color: var(--muted2);
+  line-height: 1.8;
+}
+
+/* ============================================================
+   REVEAL
+   ============================================================ */
+
+.equipo-grid.reveal .asesor-info {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 1s var(--ease-out),
+    transform 1s var(--ease-out);
+}
+
+.equipo-grid.reveal.visible .asesor-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.equipo-grid.reveal.visible .asesor-card:nth-child(1) .asesor-info {
+  transition-delay: 150ms;
+}
+
+.equipo-grid.reveal.visible .asesor-card:nth-child(2) .asesor-info {
+  transition-delay: 100ms;
+}
+
+.equipo-grid.reveal.visible .asesor-card:nth-child(3) .asesor-info {
+  transition-delay: 50ms;
+}
+
+/* ============================================================
+   TEAM - RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  .nos-equipo {
+    margin-bottom: 72px;
+  }
+
+  .equipo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .asesor-img {
+    height: 230px;
+  }
+
+  .asesor-info {
+    padding: 22px 24px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .nos-equipo {
+    margin-bottom: 60px;
+  }
+
+  .equipo-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 30px;
+  }
+
+  .asesor-img {
+    height: 260px;
+  }
+
+  .asesor-info {
+    padding: 22px;
+  }
+
+  .asesor-info h3 {
+    font-size: 18px;
+  }
+
+  .asesor-info p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .asesor-img {
+    height: 230px;
+  }
+
+  .asesor-info {
+    padding: 20px;
+  }
+
+}
