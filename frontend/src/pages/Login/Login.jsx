@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import SEO from "../../components/SEO/SEO";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
@@ -50,6 +51,7 @@ const Login = () => {
 
   return (
     <>
+      <SEO title="Prime Inmobiliaria | Acceso" />
       <Navbar />
 
       <div className="login-page">
@@ -69,11 +71,12 @@ const Login = () => {
           <form onSubmit={handleSubmit} className="form">
 
             <div className="form-group">
-              <label>Usuario</label>
+              <label htmlFor="username">Usuario</label>
 
               <input
                 type="text"
                 name="username"
+                id="username"
                 value={username}
                 onChange={(event) => setUsername(event.target.value)}
                 required
@@ -81,11 +84,12 @@ const Login = () => {
             </div>
 
             <div className="form-group">
-              <label>Contraseña</label>
+              <label htmlFor="password">Contraseña</label>
 
               <input
                 type="password"
                 name="password"
+                id="password"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
                 required

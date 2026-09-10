@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
+import SEO from "../../components/SEO/SEO";
 import "./Admin.css";
 
 const getUserRole = () => {
@@ -234,6 +235,7 @@ const Admin = () => {
 
   return (
     <>
+      <SEO title="Prime Inmobiliaria | Administrador" />
       <Navbar />
 
       <div className="admin-page">

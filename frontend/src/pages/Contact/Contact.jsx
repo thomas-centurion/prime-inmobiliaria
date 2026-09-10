@@ -3,12 +3,14 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import ContactInfo from "../../components/ContactInfo/ContactInfo";
 import Footer from "../../components/Footer/Footer";
+import SEO from "../../components/SEO/SEO";
 
 import "./Contact.css";
 
 const Contact = () => {
   return (
     <>
+      <SEO title="Prime Inmobiliaria | Propiedades" />
       <Navbar />
       <PageHeader
         title="Contacto"

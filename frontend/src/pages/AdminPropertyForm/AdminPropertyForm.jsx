@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
+import SEO from "../../components/SEO/SEO";
 
 const AdminPropertyForm = () => {
   const { id } = useParams();
@@ -105,6 +106,7 @@ const AdminPropertyForm = () => {
 
   return (
     <>
+      <SEO title="Prime Inmobiliaria | Administrador" />
       <Navbar />
       <div className="admin-page">
 
@@ -140,11 +142,12 @@ const AdminPropertyForm = () => {
 
                 <div className="form-group form-group-full">
 
-                  <label>Título *</label>
+                  <label htmlFor="title">Título *</label>
 
                   <input
                     type="text"
                     name="title"
+                    id="title"
                     value={formData.title}
                     onChange={handleChange}
                     required
@@ -161,9 +164,10 @@ const AdminPropertyForm = () => {
 
                 <div className="form-group">
 
-                  <label>Operación *</label>
+                  <label htmlFor="operation">Operación *</label>
 
                   <select
+                    id="operation"
                     name="operation"
                     value={formData.operation}
                     onChange={handleChange}
@@ -176,9 +180,10 @@ const AdminPropertyForm = () => {
 
                 <div className="form-group">
 
-                  <label>Tipo *</label>
+                  <label htmlFor="type">Tipo *</label>
 
                   <select
+                    id="type"
                     name="type"
                     value={formData.type}
                     onChange={handleChange}
@@ -201,9 +206,10 @@ const AdminPropertyForm = () => {
 
                 <div className="form-group">
 
-                  <label>Precio</label>
+                  <label htmlFor="price">Precio</label>
 
                   <input
+                    id="price"
                     type="number"
                     name="price"
                     value={formData.price}
@@ -215,9 +221,10 @@ const AdminPropertyForm = () => {
 
                 <div className="form-group">
 
-                  <label>Moneda</label>
+                  <label htmlFor="currency">Moneda</label>
 
                   <input
+                    id="currency"
                     type="text"
                     value={formData.operation === "venta" ? "USD" : "ARS"}
                     readOnly
@@ -234,11 +241,12 @@ const AdminPropertyForm = () => {
 
                 <div className="form-group">
 
-                  <label>Zona</label>
+                  <label htmlFor="location">Zona</label>
 
                   <input
                     type="text"
                     name="location"
+                    id="location"
                     value={formData.location}
                     onChange={handleChange}
                     placeholder="Ej: Palermo, Belgrano"
@@ -248,9 +256,10 @@ const AdminPropertyForm = () => {
 
                 <div className="form-group">
 
-                  <label>Dirección</label>
+                  <label htmlFor="address">Dirección</label>
 
                   <input
+                    id="address"
                     type="text"
                     name="address"
                     value={formData.address}
@@ -268,9 +277,10 @@ const AdminPropertyForm = () => {
 
                 <div className="form-group">
 
-                  <label>Ambientes</label>
+                  <label htmlFor="rooms">Ambientes</label>
 
                   <input
+                    id="rooms"
                     type="number"
                     name="rooms"
                     value={formData.rooms}
@@ -283,11 +293,12 @@ const AdminPropertyForm = () => {
 
                 <div className="form-group">
 
-                  <label>Dormitorios</label>
+                  <label htmlFor="bedrooms">Dormitorios</label>
 
                   <input
                     type="number"
                     name="bedrooms"
+                    id="bedrooms"
                     value={formData.bedrooms}
                     onChange={handleChange}
                     min="0"
@@ -298,11 +309,12 @@ const AdminPropertyForm = () => {
 
                 <div className="form-group">
 
-                  <label>Baños</label>
+                  <label htmlFor="bathrooms">Baños</label>
 
                   <input
                     type="number"
                     name="bathrooms"
+                    id="bathrooms"
                     value={formData.bathrooms}
                     onChange={handleChange}
                     min="0"
@@ -319,11 +331,12 @@ const AdminPropertyForm = () => {
 
                 <div className="form-group">
 
-                  <label>Área (m²)</label>
+                  <label htmlFor="area">Área (m²)</label>
 
                   <input
                     type="number"
                     name="area"
+                    id="area"
                     value={formData.area}
                     onChange={handleChange}
                     min="1"
@@ -339,11 +352,12 @@ const AdminPropertyForm = () => {
 
               <div className="form-group">
 
-                <label>Imagen (URL)</label>
+                <label htmlFor="image">Imagen (URL)</label>
 
                 <input
                   type="url"
                   name="image"
+                  id="image"
                   value={formData.image}
                   onChange={handleChange}
                   placeholder="https://images.unsplash.com/..."
@@ -355,9 +369,10 @@ const AdminPropertyForm = () => {
 
               <div className="form-group">
 
-                <label>Descripción *</label>
+                <label htmlFor="description">Descripción *</label>
 
                 <textarea
+                  id="description"
                   name="description"
                   value={formData.description}
                   onChange={handleChange}
@@ -372,11 +387,12 @@ const AdminPropertyForm = () => {
 
               <div className="form-row form-options">
 
-                <label className="check-label">
+                <label htmlFor="featured" className="check-label">
 
                   <input
                     type="checkbox"
                     name="featured"
+                    id="featured"
                     checked={formData.featured}
                     onChange={handleChange}
                   />
@@ -385,11 +401,12 @@ const AdminPropertyForm = () => {
 
                 </label>
 
-                <label className="check-label">
+                <label htmlFor="active" className="check-label">
 
                   <input
                     type="checkbox"
                     name="active"
+                    id="active"
                     checked={formData.active}
                     onChange={handleChange}
                   />

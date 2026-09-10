@@ -97,11 +97,12 @@ const ContactForm = () => {
           <div className="form-row">
 
             <div className="form-group">
-              <label>Nombre completo *</label>
+              <label htmlFor="name">Nombre completo *</label>
 
               <input
-                type="text"
+                id="name"
                 name="name"
+                type="text"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -110,11 +111,12 @@ const ContactForm = () => {
             </div>
 
             <div className="form-group">
-              <label>Email *</label>
+              <label htmlFor="email">Email *</label>
 
               <input
                 type="email"
                 name="email"
+                id="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -127,9 +129,10 @@ const ContactForm = () => {
           <div className="form-row">
 
             <div className="form-group">
-              <label>¿Qué te interesa?</label>
+              <label htmlFor="interest">¿Qué te interesa?</label>
 
               <select
+                id="interest"
                 name="type"
                 value={formData.type}
                 onChange={handleChange}
@@ -197,9 +200,10 @@ const ContactForm = () => {
           </div>
 
           <div className="form-group">
-            <label>Mensaje *</label>
+            <label htmlFor="message">Mensaje *</label>
 
             <textarea
+              id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
@@ -210,13 +214,13 @@ const ContactForm = () => {
           </div>
 
           {error && (
-            <p className="login-error">
+            <p className="login-error" role="alert">
               {error}
             </p>
           )}
 
           {success && (
-            <p>
+            <p aria-live="polite">
               {success}
             </p>
           )}

@@ -8,6 +8,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import Filters from "../../components/Filters/Filters";
 import PropertyCard from "../../components/PropertyCard/PropertyCard";
 import Footer from "../../components/Footer/Footer";
+import SEO from "../../components/SEO/SEO";
 
 import "./Properties.css";
 
@@ -53,6 +54,7 @@ const Properties = () => {
 
   return (
     <>
+      <SEO title="Prime Inmobiliaria | Propiedades" />
       <Navbar />
 
       <PageHeader

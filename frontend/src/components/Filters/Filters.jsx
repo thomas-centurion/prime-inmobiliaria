@@ -91,9 +91,10 @@ const Filters = () => {
       >
 
         <div className="ff-group">
-          <label>Operación</label>
+          <label htmlFor="operation">Operación</label>
 
           <select
+            id="operation"
             name="operation"
             value={filters.operation}
             onChange={handleChange}
@@ -105,9 +106,10 @@ const Filters = () => {
         </div>
 
         <div className="ff-group">
-          <label>Tipo</label>
+          <label htmlFor="type">Tipo</label>
 
           <select
+            id="type"
             name="type"
             value={filters.type}
             onChange={handleChange}
@@ -123,9 +125,10 @@ const Filters = () => {
         </div>
 
         <div className="ff-group">
-          <label>Zona</label>
+          <label htmlFor="location">Zona</label>
 
           <select
+            id="location"
             name="location"
             value={filters.location}
             onChange={handleChange}
@@ -141,9 +144,10 @@ const Filters = () => {
         </div>
 
         <div className="ff-group">
-          <label>Precio máximo</label>
+          <label htmlFor="maxPrice">Precio máximo</label>
 
           <select
+            id="maxPrice"
             name="maxPrice"
             value={filters.maxPrice}
             onChange={handleChange}

@@ -4,12 +4,14 @@ import AboutIntro from "../../components/AboutIntro/AboutIntro";
 import Team from "../../components/Team/Team";
 import Values from "../../components/Values/Values";
 import Footer from "../../components/Footer/Footer";
+import SEO from "../../components/SEO/SEO";
 
 import "./About.css";
 
 const About = () => {
   return (
     <>
+      <SEO title="Prime Inmobiliaria | Nosotros" />
       <Navbar />
 
       <PageHeader

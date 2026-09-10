@@ -24,7 +24,7 @@ const Navbar = () => {
           </div>
         </Link>
 
-        <nav className={`navbar-links ${menuOpen ? "open" : ""}`}>
+        <nav className={`navbar-links ${menuOpen ? "open" : ""}`} aria-label="Navegación principal">
           <Link to="/" onClick={closeMenu}>
             Inicio
           </Link>

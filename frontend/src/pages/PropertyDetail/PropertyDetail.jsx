@@ -5,6 +5,7 @@ import { getPropertyById } from "../../services/api";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import SEO from "../../components/SEO/SEO";
 import PropertyDetailInfo from "../../components/PropertyDetailInfo/PropertyDetailInfo";
 import PropertyDetailPrice from "../../components/PropertyDetailPrice/PropertyDetailPrice";
 import RelatedProperties from "../../components/RelatedProperties/RelatedProperties";
@@ -41,6 +42,7 @@ const PropertyDetail = () => {
   if (loading) {
     return (
       <>
+        <SEO title="Prime Inmobiliaria | Propiedades" />
         <Navbar />
 
         <main className="detalle-page wrap">
