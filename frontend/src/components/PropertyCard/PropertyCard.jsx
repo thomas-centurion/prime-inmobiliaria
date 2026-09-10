@@ -1,5 +1,6 @@
 import "./PropertyCard.css";
 import "../ScrollReveal/ScrollReveal.css";
+import { Link } from "react-router-dom";
 import useScrollReveal from "../ScrollReveal/useScrollReveal";
 
 const PropertyCard = ({ property, revealDelay = 0 }) => {
@@ -10,7 +11,7 @@ const PropertyCard = ({ property, revealDelay = 0 }) => {
       ref={revealRef}
       className="prop-card reveal"
     >
-      <a href={`/propiedades/${property._id}`} className="prop-card-link">
+      <Link to={`/propiedades/${property._id}`} className="prop-card-link">
         <div className="prop-img">
           <img
             src={property.images?.[0]}
@@ -48,6 +49,7 @@ const PropertyCard = ({ property, revealDelay = 0 }) => {
           </div>
 
           <div className="prop-footer">
+
             <div className="prop-precio">
               <span className="moneda">
                 {property.operation === "venta" ? "USD" : "ARS"}
@@ -61,9 +63,12 @@ const PropertyCard = ({ property, revealDelay = 0 }) => {
             <span className="prop-ver">
               Ver propiedad
             </span>
+
           </div>
+          
         </div>
-      </a>
+      </Link>
+
     </article>
   );
 };

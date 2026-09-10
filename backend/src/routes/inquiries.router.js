@@ -4,27 +4,29 @@ import inquiriesController from "../controllers/inquiries.controller.js";
 
 import authenticate from "../middlewares/auth.middleware.js";
 import authorizeAdmin from "../middlewares/admin.middleware.js";
+import authorizeReadOnly from "../middlewares/demo.middleware.js";
 
 const router = Router();
 
 // Público: cualquier visitante puede enviar una consulta
 router.post("/", inquiriesController.createInquiry);
 
-// Administrador
+// Lectura: admin y demo
 router.get(
   "/",
   authenticate,
-  authorizeAdmin,
+  authorizeReadOnly,
   inquiriesController.getAllInquiries
 );
 
 router.get(
   "/:id",
   authenticate,
-  authorizeAdmin,
+  authorizeReadOnly,
   inquiriesController.getInquiryById
 );
 
+// Modificación: solamente admin real
 router.put(
   "/:id",
   authenticate,

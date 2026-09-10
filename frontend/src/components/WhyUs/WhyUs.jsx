@@ -1,5 +1,6 @@
 import useScrollReveal from "../ScrollReveal/useScrollReveal";
 import "./WhyUs.css";
+import { Link } from "react-router-dom";
 
 const advantages = [
   {
@@ -71,9 +72,9 @@ const WhyUs = () => {
               experiencia en cada operación.
             </p>
 
-            <a href="/nosotros" className="btn btn-outline-light">
+            <Link to="/nosotros" className="btn btn-outline-light">
               Conocé al equipo
-            </a>
+            </Link>
           </div>
 
           <div className="pq-ventajas">

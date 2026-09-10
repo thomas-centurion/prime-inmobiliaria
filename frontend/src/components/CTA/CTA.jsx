@@ -1,4 +1,5 @@
 import "./CTA.css";
+import { Link } from "react-router-dom";
 
 const CTA = () => {
   return (
@@ -17,9 +18,9 @@ const CTA = () => {
           </div>
 
           <div className="cta-btns">
-            <a href="/contacto" className="btn btn-primary">
+            <Link to="/contacto" className="btn btn-primary">
               Consultá gratis
-            </a>
+            </Link>
 
             <a href="tel:(011) 4567-8900" className="btn btn-outline">
               (011) 4567-8900

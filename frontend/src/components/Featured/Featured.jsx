@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 import { getProperties } from "../../services/api";
 
 import PropertyCard from "../PropertyCard/PropertyCard";
@@ -38,9 +38,9 @@ const Featured = () => {
             <h2>Propiedades destacadas</h2>
           </div>
 
-          <a href="/propiedades" className="btn btn-outline">
+          <Link to="/propiedades" className="btn btn-outline">
             Ver todas →
-          </a>
+          </Link>
         </div>
 
         <div className="props-grid">

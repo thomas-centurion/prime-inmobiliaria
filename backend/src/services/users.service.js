@@ -3,7 +3,12 @@ import usersRepository from "../repositories/users.repository.js";
 import jwt from "jsonwebtoken";
 
 const createUser = async (userData) => {
-  const { username, password } = userData;
+  const {
+    username,
+    password,
+    name,
+    phone,
+  } = userData;
 
   const existingUser = await usersRepository.getUserByUsername(username);
 
@@ -14,8 +19,11 @@ const createUser = async (userData) => {
   const hashedPassword = await bcrypt.hash(password, 10);
 
   const user = await usersRepository.createUser({
-    ...userData,
+    username,
     password: hashedPassword,
+    name,
+    phone,
+    role: "user",
   });
 
   const userResponse = user.toObject();

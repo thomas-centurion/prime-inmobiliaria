@@ -9,26 +9,33 @@ const PORT = process.env.PORT || 3000;
 const createAdminUser = async () => {
   try {
     const existingAdmin = await User.findOne({
-      username: "admin",
+      username: process.env.DEMO_USERNAME,
     });
 
     if (existingAdmin) {
-      console.log("Usuario admin ya existe");
+      if (existingAdmin.role !== "demo") {
+        existingAdmin.role = "demo";
+        await existingAdmin.save();
+        }
+        
       return;
     }
 
-    const hashedPassword = await bcrypt.hash("admin", 10);
+    const hashedPassword = await bcrypt.hash(
+      process.env.DEMO_PASSWORD,
+      10
+    );
 
     await User.create({
-      name: "Administrador",
-      username: "admin",
+      name: "Administrador Demo",
+      username: process.env.DEMO_USERNAME,
       password: hashedPassword,
-      role: "admin",
+      role: "demo",
     });
 
-    console.log("Usuario admin creado correctamente");
+    console.log("Usuario demo creado correctamente");
   } catch (error) {
-    console.error("Error al crear usuario admin:", error.message);
+    console.error("Error al crear usuario demo:", error.message);
   }
 };
 

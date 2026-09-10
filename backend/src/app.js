@@ -8,7 +8,11 @@ import inquiriesRouter from "./routes/inquiries.router.js";
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+  })
+);
 
 app.use("/api/users", usersRouter);
 app.use("/api/properties", propertiesRouter);
@@ -17,7 +21,7 @@ app.use("/api/inquiries", inquiriesRouter);
 app.use((error, req, res, next) => {
   console.error(error);
 
-  // ID de MongoDB inválido
+  // ID de MongoDB inválidoo
   if (error.name === "CastError") {
     return res.status(400).json({
       status: "error",
@@ -34,7 +38,7 @@ app.use((error, req, res, next) => {
     });
   }
 
-  // Cualquier otro error inesperado
+  // Cualquier otro error
   res.status(500).json({
     status: "error",
     message: error.message || "Error interno del servidor",

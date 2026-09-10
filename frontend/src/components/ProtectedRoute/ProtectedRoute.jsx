@@ -1,9 +1,12 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const ProtectedRoute = () => {
   const [loading, setLoading] = useState(true);
   const [authenticated, setAuthenticated] = useState(false);
+  const [userRole, setUserRole] = useState(null);
 
   useEffect(() => {
     const verifyToken = async () => {
@@ -17,7 +20,7 @@ const ProtectedRoute = () => {
 
       try {
         const response = await fetch(
-          "http://localhost:3000/api/users/me",
+          `${API_URL}/users/me`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -31,7 +34,10 @@ const ProtectedRoute = () => {
           return;
         }
 
+        const data = await response.json();
+
         setAuthenticated(true);
+        setUserRole(data.payload.role);
       } catch (error) {
         console.error("Error al verificar autenticación:", error);
 
@@ -51,6 +57,10 @@ const ProtectedRoute = () => {
 
   if (!authenticated) {
     return <Navigate to="/admin/login" replace />;
+  }
+
+  if (userRole !== "admin" && userRole !== "demo") {
+    return <Navigate to="/" replace />;
   }
 
   return <Outlet />;

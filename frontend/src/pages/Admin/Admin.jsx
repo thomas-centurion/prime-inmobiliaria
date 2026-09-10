@@ -3,8 +3,27 @@ import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import "./Admin.css";
 
+const getUserRole = () => {
+  const token = localStorage.getItem("token");
+
+  if (!token) return null;
+
+  try {
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    return payload.role;
+  } catch {
+    return null;
+  }
+};
+
 const Admin = () => {
   const navigate = useNavigate();
+
+  const isDemo = getUserRole() === "demo";
+
+  const handleDemoAction = () => {
+    alert("Esta es una demo. Las modificaciones están deshabilitadas.");
+  };
 
   const [properties, setProperties] = useState([]);
   const [consultations, setConsultations] = useState([]);
@@ -212,6 +231,7 @@ const Admin = () => {
     });
   };
 
+
   return (
     <>
       <Navbar />
@@ -223,12 +243,22 @@ const Admin = () => {
             <h1>Panel de Administración</h1>
 
             <div className="admin-topbar-actions">
-              <Link
-                to="/admin/propiedades/nueva"
-                className="btn btn-primary"
-              >
-                + Nueva propiedad
-              </Link>
+              {isDemo ? (
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={handleDemoAction}
+                >
+                  + Nueva propiedad
+                </button>
+              ) : (
+                <Link
+                  to="/admin/propiedades/nueva"
+                  className="btn btn-primary"
+                >
+                  + Nueva propiedad
+                </Link>
+              )}
 
               <button
                 type="button"
@@ -273,12 +303,22 @@ const Admin = () => {
 
               <h2>Propiedades</h2>
 
-              <Link
-                to="/admin/propiedades/nueva"
-                className="btn btn-primary adm-new-btn"
-              >
-                + Nueva
-              </Link>
+              {isDemo ? (
+                <button
+                  type="button"
+                  className="btn btn-primary adm-new-btn"
+                  onClick={handleDemoAction}
+                >
+                  + Nueva
+                </button>
+              ) : (
+                <Link
+                  to="/admin/propiedades/nueva"
+                  className="btn btn-primary adm-new-btn"
+                >
+                  + Nueva
+                </Link>
+              )}
 
             </div>
 
@@ -349,18 +389,30 @@ const Admin = () => {
                           <td>
                             <div className="adm-actions">
 
-                              <Link
-                                to={`/admin/propiedades/${property._id}/editar`}
-                                className="adm-btn"
-                              >
-                                Editar
-                              </Link>
+                              {isDemo ? (
+                                <button
+                                  type="button"
+                                  className="adm-btn"
+                                  onClick={handleDemoAction}
+                                >
+                                  Editar
+                                </button>
+                              ) : (
+                                <Link
+                                  to={`/admin/propiedades/${property._id}/editar`}
+                                  className="adm-btn"
+                                >
+                                  Editar
+                                </Link>
+                              )}
 
                               <button
                                 type="button"
                                 className="adm-btn adm-btn-danger"
-                                onClick={() =>
-                                  handleDelete(property._id)
+                                onClick={
+                                  isDemo
+                                    ? handleDemoAction
+                                    : () => handleDelete(property._id)
                                 }
                               >
                                 Baja
@@ -508,25 +560,26 @@ const Admin = () => {
                                 <button
                                   type="button"
                                   className="adm-btn"
-                                  onClick={() =>
-                                    handleToggleInquiryStatus(
-                                      consultation._id,
-                                      consultation.status
-                                    )
+                                  onClick={
+                                    isDemo
+                                      ? handleDemoAction
+                                      : () =>
+                                          handleToggleInquiryStatus(
+                                            consultation._id,
+                                            consultation.status
+                                          )
                                   }
                                 >
-                                  {isResolved
-                                    ? "Reabrir"
-                                    : "Resolver"}
+                                  {isResolved ? "Reabrir" : "Resolver"}
                                 </button>
 
                                 <button
                                   type="button"
                                   className="adm-btn adm-btn-danger"
-                                  onClick={() =>
-                                    handleDeleteInquiry(
-                                      consultation._id
-                                    )
+                                  onClick={
+                                    isDemo
+                                      ? handleDemoAction
+                                      : () => handleDeleteInquiry(consultation._id)
                                   }
                                 >
                                   Eliminar
@@ -681,11 +734,14 @@ const Admin = () => {
               <button
                 type="button"
                 className="adm-btn"
-                onClick={() =>
-                  handleToggleInquiryStatus(
-                    selectedConsultation._id,
-                    selectedConsultation.status
-                  )
+                onClick={
+                  isDemo
+                    ? handleDemoAction
+                    : () =>
+                        handleToggleInquiryStatus(
+                          selectedConsultation._id,
+                          selectedConsultation.status
+                        )
                 }
               >
                 {selectedConsultation.status === "resuelta"
@@ -696,12 +752,14 @@ const Admin = () => {
               <button
                 type="button"
                 className="adm-btn adm-btn-danger"
-                onClick={() => {
-                  setSelectedConsultation(null);
-                  handleDeleteInquiry(
-                    selectedConsultation._id
-                  );
-                }}
+                onClick={
+                  isDemo
+                    ? handleDemoAction
+                    : () => {
+                        setSelectedConsultation(null);
+                        handleDeleteInquiry(selectedConsultation._id);
+                      }
+                }
               >
                 Eliminar
               </button>

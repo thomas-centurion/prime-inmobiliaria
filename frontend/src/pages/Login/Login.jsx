@@ -4,6 +4,8 @@ import Footer from "../../components/Footer/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Login = () => {
   const navigate = useNavigate();
 
@@ -18,7 +20,7 @@ const Login = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/api/users/login",
+        `${API_URL}/users/login`,
         {
           method: "POST",
           headers: {
