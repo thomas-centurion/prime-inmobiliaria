@@ -14,6 +14,8 @@ const startServer = async () => {
 
 if (!process.env.VERCEL) {
   startServer();
+} else {
+  await connectDB();
 }
 
 export default app;
